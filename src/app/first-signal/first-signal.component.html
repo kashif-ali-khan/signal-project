@@ -1,0 +1,50 @@
+
+<div class="callout callout-default">
+  <h4>Signals</h4>
+  Basic of signals
+</div><table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">fullName</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    <tr>
+      <th scope="row">1</th>
+      <td>{{firstname()}}</td>
+      <td>{{lastname()}}</td>
+      <td>{{fullname()}}</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>
+
+        <form class="row g-3">
+
+          <div class="col-auto">
+            <label for="inputPassword2" class="visually-hidden">firstname</label>
+            <input type="text" #fname class="form-control" id="fname" placeholder="First Name">
+          </div>
+          <div class="col-auto">
+            <button (click)="changefname(fname.value)"  type="button" class="btn btn-primary mb-3">Change FirstName</button>
+          </div>
+        </form>
+      </td>
+      <td>
+        <form class="row g-3">
+
+          <div class="col-auto">
+            <label for="inputPassword2" class="visually-hidden">lastname</label>
+            <input type="text" #lname class="form-control" id="lname" placeholder="Last Name">
+          </div>
+          <div class="col-auto">
+            <button (click)="changelname(lname.value)" type="button" class="btn btn-primary mb-3">Change lastname</button>
+          </div>
+        </form></td>
+    </tr>
+
+  </tbody>
+</table>

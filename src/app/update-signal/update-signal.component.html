@@ -1,0 +1,20 @@
+<div class="callout callout-info">
+  <h4>Update Signals</h4>
+  In this will cover about Update method of signal
+</div>
+
+
+<form class="row g-3">
+
+  <div class="col-auto">
+    <button (click)="increaseV()"  type="button" class="btn btn-primary mb-3">+</button>
+  </div>
+  <div class="col-auto">
+    <label for="inputPassword2" class="visually-hidden">firstname</label>
+    <input type="text" #fname class="form-control" id="fname" placeholder="Value" [value]="val()">
+  </div>
+  <div class="col-auto">
+    <button (click)="descreaseV()"  type="button" class="btn btn-primary mb-3">-</button>
+  </div>
+
+</form>
