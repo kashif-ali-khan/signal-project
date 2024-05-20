@@ -1,0 +1,27 @@
+<div class="callout callout-warning">
+  <h4>Without Signals</h4>
+  Let's start with a simple example without the use of signals
+</div>
+
+<div class="hstack gap-3">
+  <div class="p-2">Value of A is = <strong>{{a}}</strong></div>
+  <div class="p-2">Value of B is = <strong>{{b}}</strong></div>
+  <div class="p-2">Sum of A + B  is =  <strong>{{c}}</strong></div>
+
+</div>
+<div class="hstack gap-3">
+
+
+  <div class="p-2">Change  the value of A to 12 </div>
+    <div class="p-2"><button type="button" (click)="changeValue()" class="btn btn-primary">Click to change</button></div>
+
+
+</div>
+@if(isclicked){
+<div class="alert alert-danger" role="alert">
+  Sum is still pointing old value
+</div>
+<div class="alert alert-primary" role="alert">
+So here's comes the Signals that Can react on value change .
+</div>
+}
