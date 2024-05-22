@@ -1,0 +1,25 @@
+<div class="callout callout-success">
+  <h4>With Signals</h4>
+  Let's see how it will simplify , the ABove mentioned example
+</div>
+
+<div class="hstack gap-3">
+  <div class="p-2">Value of A is = <strong>{{a()}}</strong></div>
+  <div class="p-2">Value of B is = <strong>{{b()}}</strong></div>
+  <div class="p-2">Sum of A + B  is =  <strong>{{c()}}</strong></div>
+
+</div>
+<div class="hstack gap-3">
+
+
+  <div class="p-2">Change  the value of A to 12 </div>
+    <div class="p-2"><button type="button" (click)="changeValue()" class="btn btn-primary">Click to change</button></div>
+
+
+</div>
+@if(isclicked){
+
+<div class="alert alert-primary" role="alert">
+Now check the Value of Sum , It is updated to new
+</div>
+}

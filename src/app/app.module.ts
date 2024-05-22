@@ -8,6 +8,7 @@ import { UpdateSignalComponent } from './update-signal/update-signal.component';
 import { SignalMutuateArrayComponent } from './signal-mutuate-array/signal-mutuate-array.component';
 import { CalloutComponent } from './shared/callout/callout.component';
 import { WithoutSignalComponent } from './without-signal/without-signal.component';
+import { WithSignalComponent } from './with-signal/with-signal.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { WithoutSignalComponent } from './without-signal/without-signal.componen
     UpdateSignalComponent,
     SignalMutuateArrayComponent,
     CalloutComponent,
-    WithoutSignalComponent
+    WithoutSignalComponent,
+    WithSignalComponent
 
   ],
   imports: [
