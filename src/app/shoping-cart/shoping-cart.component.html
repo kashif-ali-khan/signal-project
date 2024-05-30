@@ -1,0 +1,46 @@
+<app-callout callouttype="callout-primary" title="Update total price" description="Show Cart Total"></app-callout>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    <tr *ngFor="let cartDetail of cartArray(); let i = index">
+      <th scope="row">{{i+1}}</th>
+      <td>{{cartDetail.name}}</td>
+      <td>{{cartDetail.price | number : '1.2-2'}}</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Total Cart Value</td>
+      <td><strong>{{totalValue() | number : '1.2-2'}}</strong></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <form class="row g-3" #form>
+
+          <div class="col-auto">
+            <label for="label" class="visually-hidden">Product Name</label>
+            <input type="text" #label class="form-control" id="label" placeholder="Product Name">
+          </div>
+          <div class="col-auto">
+            <label for="price" class="visually-hidden">Price</label>
+            <input type="number" #price class="form-control" id="price" placeholder="Product Price ">
+          </div>
+
+          <div class="col-auto">
+            <button (click)="addToCart({name:label.value, price: +price.value})" type="button" class="btn btn-primary mb-3">Add Product
+              </button>
+          </div>
+        </form>
+
+      </td>
+    </tr>
+
+
+  </tbody>
+</table>
