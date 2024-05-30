@@ -45,10 +45,17 @@ export class ShopingCartComponent {
   });
 
   addToCart(product: Product) {
-    if(product.name && product.name){
-    this.cartArray.update((p) =>
-      p.concat({ ...product, price: +product.price })
-    );
+    if (product.name && product.name) {
+      this.cartArray.update((p) =>
+        p.concat({ ...product, price: +product.price })
+      );
+    }
   }
+
+  removeItem(index: number) {
+    this.cartArray.update((p) => {
+      p.splice(index, 1);
+      return [...p];
+    });
   }
 }
