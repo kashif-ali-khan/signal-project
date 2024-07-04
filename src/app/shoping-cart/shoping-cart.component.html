@@ -1,0 +1,54 @@
+<app-callout callouttype="callout-primary" title="Update total price" description="Show Cart Total"></app-callout>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Price</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    <tr *ngFor="let cartDetail of cartArray(); let i = index">
+      <th scope="row">{{i+1}}</th>
+      <td>{{cartDetail.name}}</td>
+      <td>{{cartDetail.price | number : '1.2-2'}}</td>
+      <td><button type="button" class="btn btn-outline-danger" (click)="removeItem(i)">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+<path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"></path>
+<path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"></path>
+</svg>
+
+      </button></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Total Cart Value</td>
+      <td><strong>{{totalValue() | number : '1.2-2'}}</strong></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <form class="row g-3" #form>
+
+          <div class="col-auto">
+            <label for="label" class="visually-hidden">Product Name</label>
+            <input type="text" #label class="form-control" id="label" placeholder="Product Name">
+          </div>
+          <div class="col-auto">
+            <label for="price" class="visually-hidden">Price</label>
+            <input type="number" #price class="form-control" id="price" placeholder="Product Price ">
+          </div>
+
+          <div class="col-auto">
+            <button (click)="addToCart({name:label.value, price: +price.value})" type="button" class="btn btn-primary mb-3">Add Product
+              </button>
+          </div>
+        </form>
+
+      </td>
+    </tr>
+
+
+  </tbody>
+</table>

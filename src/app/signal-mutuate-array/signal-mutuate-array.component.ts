@@ -1,5 +1,14 @@
 import { Component, signal } from '@angular/core';
 
+interface EmpDetail {
+  id: number;
+  email: string;
+  first_name: string;
+  last_name: string;
+  avatar: string;
+
+}
+
 @Component({
   selector: 'app-signal-mutuate-array',
   templateUrl: './signal-mutuate-array.component.html',
@@ -7,7 +16,7 @@ import { Component, signal } from '@angular/core';
 })
 export class SignalMutuateArrayComponent {
 
-  empArray = signal([
+  empArray = signal <EmpDetail[]>([
     {
         "id": 7,
         "email": "michael.lawson@reqres.in",
@@ -45,9 +54,9 @@ export class SignalMutuateArrayComponent {
     }])
 
 
-    addEmp(form:any){
-      console.log(form)
-      this.empArray.mutate(emp=>emp.push(form))
+    addEmp(formValues:any){
+      console.log(formValues)
+      this.empArray.update((empValues)=>empValues.concat(formValues))
 
     }
 

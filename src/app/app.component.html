@@ -1,7 +1,27 @@
 <div class="container">
+  <div class="row">
+    <div class="col-2">
+      <ul class="nav flex-column nav-pills">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLink="/home" routerLinkActive="active" >Signal Sample</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/other" routerLinkActive="active" >Other Signal</a>
+        </li>
 
-<app-first-signal></app-first-signal>
-<app-update-signal></app-update-signal>
-<app-signal-mutuate-array></app-signal-mutuate-array>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="cases" routerLinkActive="active" >Use cases of Signal</a>
+        </li>
+
+
+      </ul>
+
+
+    </div>
+    <div class="col-10">
+<router-outlet></router-outlet>
+    </div>
+  </div>
+
 </div>
 
